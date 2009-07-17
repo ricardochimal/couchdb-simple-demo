@@ -4,5 +4,8 @@ def db
 	@db ||= CouchRest.database!(ENV['COUCHDB_URL'])
 end
 
-require File.dirname(__FILE__) + '/access_log'
+$LOAD_PATH.unshift << File.dirname(__FILE__)
+
+require 'access_log'
+require 'counting'
 
