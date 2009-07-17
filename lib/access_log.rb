@@ -15,6 +15,12 @@ class AccessLog < CouchRest::ExtendedDocument
 		self.ip = self.ip.split(",").first.strip
 	end
 
+	def safe_ip
+		octects = self.ip.split('.')
+		octects[3] = 'xxx'
+		octects.join('.')
+	end
+
 	def self.create_from_request(request)
 		log = AccessLog.new
 		log.ip = request.env['REMOTE_ADDR']

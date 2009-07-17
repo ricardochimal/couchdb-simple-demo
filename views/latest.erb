@@ -1,0 +1,20 @@
+<h2>Latest Access</h2>
+
+<table>
+<thead>
+	<th>IP</th>
+	<th>Browser</th>
+	<th>Accessed On</th>
+</thead>
+<tbody>
+
+<% @logs.each do |log| %>
+<tr>
+	<td><%= log.safe_ip %></td>
+	<td><%= log.user_agent %></td>
+	<td><%= log.created_at %></td>
+</tr>
+<% end %>
+
+</tbody>
+</table>

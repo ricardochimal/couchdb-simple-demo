@@ -14,3 +14,8 @@ end
 get '/env' do
 	request.env.collect { |k, v| "#{k} = #{v.inspect}" }.join("<br />\n")
 end
+
+get '/latest' do
+	@logs = AccessLog.all(:limit => 20)
+	erb :latest
+end
