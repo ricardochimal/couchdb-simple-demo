@@ -8,5 +8,5 @@ get '/' do
 end
 
 get '/env' do
-	request.env.collect { |k, v| "#{k} = #{v.inspect}" }.join("\n")
+	request.env.collect { |k, v| "#{k} = #{v.inspect}" }.join("<br />\n")
 end
