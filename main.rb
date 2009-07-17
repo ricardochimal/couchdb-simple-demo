@@ -8,7 +8,7 @@ before do
 end
 
 get '/' do
-	"Hello, I've been seen by #{AccessLog.count} times. <a href=\"/latest\">View Latest Hits</a>"
+	"Hello, I've been seen #{AccessLog.count} times. <a href=\"/latest\">View Latest Hits</a>"
 end
 
 get '/env' do
